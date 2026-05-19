@@ -1,0 +1,358 @@
+/*
+   1. VARIÁVEIS GERAIS E CONFIGURAÇÃO DE RESET
+   */
+
+/*
+  CORES:
+  COR PRIMÁRIA: #081b29 - (8, 27, 41)
+  Cor SECUNDÁRIA: #00abf0 - (0, 171, 240)
+  */
+
+:root {
+    --cor-fundo: rgb(8, 27, 41);
+    --cor-principal: #00abf0;
+    --cor-texto-claro: #ffffff;
+    --cor-borda-foto: #6f7175c5;
+    
+    --fonte-padrao: Arial, Helvetica, sans-serif;
+    --transicao-link: color 0.3s ease;
+}
+
+* {
+    font-family: var(--fonte-padrao);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    overflow-x: hidden;
+}
+
+/*
+   2. NAVBAR (MENU SUPERIOR)
+*/
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.4rem 5%;
+}
+
+.nav-logo a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.0625rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3.5rem;
+}
+
+.nav-links a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: var(--transicao-link);
+}
+
+.nav-logo a:hover,
+.nav-links a:hover {
+    color: var(--cor-principal);
+}
+
+/*
+   3. CONTAINER PRINCIPAL E ESTRUTURA DOS BLOCOS (Substitutos do Translate)
+*/
+
+.secao-principal {
+    padding-top: 8.75rem;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.secao-inicio {
+    padding-bottom: 20rem; 
+}
+
+/*
+   4. SEÇÃO DA IMAGEM DE PERFIL
+*/
+.container-imagem {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start; 
+    width: 100%;
+    padding-right: 5%;
+}
+
+.foto-perfil {
+    max-width: 21.875rem;
+    height: auto;
+    border-radius: 0.9375rem;
+    border: 3px solid var(--cor-borda-foto);
+    box-shadow: 9px 9px 9px 0px rgba(73, 73, 75, 0.823);
+}
+
+/*
+   5. TEXTOS DA APRESENTAÇÃO
+ */
+.container-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;    
+    color: var(--cor-texto-claro);
+    gap: 0.625rem;
+    margin-top: -21.875rem;
+    max-width: 37.5rem;
+}
+
+.container-conteudo h1,
+.container-conteudo h3,
+.container-sobre h1,
+.container-habilidades h1 {
+    margin: 0;
+}
+
+.container-conteudo h1 {
+    font-size: 3.5rem;
+    white-space: nowrap;
+}
+
+.container-conteudo h3 {
+    font-size: 1.6rem;
+}
+
+.container-conteudo h3.texto-branco {
+    color: var(--cor-texto-claro);
+}
+
+.container-conteudo h3.texto-destacado {
+    color: var(--cor-principal);
+    font-weight: bold;
+}
+
+.texto-destacado {
+    color: var(--cor-principal);
+    font-weight: bold;
+}
+
+/*
+   6. SEÇÃO SOBRE MIM
+ */
+.secao-sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    color: var(--cor-texto-claro);
+    gap: 0.9375rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    width: 100%;
+}
+
+.container-sobre h1 {
+    font-size: 3.5rem;
+    color: var(--cor-principal);
+    text-align: center;
+}
+
+.container-sobre p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 0.625rem;
+}
+
+.container-sobre-conteudo {
+    margin-top: 2.5rem;
+    border: 2px solid #007bff;
+    padding: 1.875rem 1.875rem;
+    border-radius: 0.5rem;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*
+   7. SEÇÃO HABILIDADES
+*/
+
+.secao-habilidades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    color: var(--cor-texto-claro);
+    gap: 0.9375rem; 
+    padding-top: 5rem;    
+    padding-bottom: 5rem;
+    width: 100%;
+}
+
+.container-habilidades h1 {
+    font-size: 3.5rem;
+    color: var(--cor-principal);
+    text-align: center;
+}
+
+.container-habilidades-linguagens, .container-habilidades-conceitos {
+    margin-top: 2.5rem;
+    border: 2px solid #ffffff;
+    border-radius: 0.5rem;
+    width: 83%;
+    overflow: hidden;
+}
+
+.celulas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.celula {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+
+    width: 13.75rem;
+    padding: 0.625rem 0.3125rem;
+    border: 1.5px solid #d3d3d3;
+    border-radius: 0.3125rem;
+    margin: 0.5938rem;
+}
+
+.celula img {
+    max-width: 20%;
+    height: auto;
+    border-radius: 0.1875rem;
+}
+
+.celula span {
+    font-size: 0.9375rem;
+}
+
+
+.navbar-habilidades-linguagens, .navbar-habilidades-conceitos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-principal); 
+    border-bottom: 2px solid var(--cor-principal); 
+    position: static; 
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+}
+
+.celula-estruturas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    min-width: 13.75rem;
+    width: max-content; 
+    padding: 0.625rem 1rem; 
+    border: 1.5px solid #d3d3d3; 
+    border-radius: 0.3125rem; 
+    margin: 0.5938rem; 
+    white-space: nowrap;
+}
+
+.container-habilidades {
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*
+   7. SEÇÃO CONTATO
+*/
+
+.container-contato h1 {
+    font-size: 3.5rem;
+    color: var(--cor-principal);
+    display: inline-block;
+}
+
+.container-contato {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+.secao-contato {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;    
+    color: var(--cor-texto-claro);
+    gap: 0.9375rem; 
+    padding-top: 5rem;    
+    padding-bottom: 5rem;
+    width: 100%;
+}
+
+.container-contato-conteudo {
+    margin-top: 1.5rem;
+    width: 100%;
+    border: none;
+    overflow: hidden;
+}
+
+.container-contato-conteudo .celulas {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.container-contato-conteudo .celula {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem; 
+    flex-direction: column;
+
+    width: 13.75rem; 
+    padding: 0.625rem 0.3125rem; 
+    border: 1.5px solid #d3d3d3;
+    border-radius: 0.3125rem; 
+    margin: 0.5938rem;
+}
+
+.container-contato-conteudo .celula a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+}
+
+.container-contato-conteudo .celula a img {
+    max-width: 40%;
+    height: auto;
+    border-radius: 0.1875rem;
+    transition: transform 0.2s ease;
+}
+
+.container-contato-conteudo .celula a:hover img {
+    transform: scale(1.05);
+}
