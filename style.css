@@ -1,19 +1,11 @@
-/*
-   1. VARIÁVEIS GERAIS E CONFIGURAÇÃO DE RESET
-   */
-
-/*
-  CORES:
-  COR PRIMÁRIA: #081b29 - (8, 27, 41)
-  Cor SECUNDÁRIA: #00abf0 - (0, 171, 240)
-  */
-
+/* ==========================================
+   1. VARIÁVEIS GERAIS, RESET E CLASSES GLOBAIS
+   ========================================== */
 :root {
     --cor-fundo: rgb(8, 27, 41);
-    --cor-principal: #00abf0;
+    --cor-principal: #0385b8;
     --cor-texto-claro: #ffffff;
     --cor-borda-foto: #6f7175c5;
-    
     --fonte-padrao: Arial, Helvetica, sans-serif;
     --transicao-link: color 0.3s ease;
 }
@@ -30,13 +22,42 @@ html {
 }
 
 body {
-    background-color: var(--cor-fundo);
+    background-image: linear-gradient(180deg, #040d14 0%, #081b29 100%);
+    color: var(--cor-texto-claro);
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
-/*
+.flex-centro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secao-padrao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center; 
+    gap: 0.9375rem; 
+    width: 100%;
+    min-height: 100vh; 
+    padding-top: 5rem; 
+    padding-bottom: 2rem;
+}
+
+.container-sobre h1,
+.container-habilidades h1,
+.container-contato h1,
+.container-projetos h1 {
+    font-size: 3.5rem;
+    color: var(--cor-principal);
+    text-align: center; 
+}
+
+/* ==========================================
    2. NAVBAR (MENU SUPERIOR)
-*/
+   ========================================== */
 .navbar {
     display: flex;
     align-items: center;
@@ -76,10 +97,9 @@ body {
     color: var(--cor-principal);
 }
 
-/*
-   3. CONTAINER PRINCIPAL E ESTRUTURA DOS BLOCOS (Substitutos do Translate)
-*/
-
+/* ==========================================
+   3. SEÇÃO INÍCIO / APRESENTAÇÃO
+   ========================================== */
 .secao-principal {
     padding-top: 8.75rem;
     padding-left: 5%;
@@ -87,12 +107,12 @@ body {
 }
 
 .secao-inicio {
-    padding-bottom: 20rem; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 8.75rem); 
 }
 
-/*
-   4. SEÇÃO DA IMAGEM DE PERFIL
-*/
 .container-imagem {
     display: flex;
     justify-content: flex-end;
@@ -109,24 +129,13 @@ body {
     box-shadow: 9px 9px 9px 0px rgba(73, 73, 75, 0.823);
 }
 
-/*
-   5. TEXTOS DA APRESENTAÇÃO
- */
 .container-conteudo {
     display: flex;
     flex-direction: column;
     align-items: flex-start;    
-    color: var(--cor-texto-claro);
     gap: 0.625rem;
     margin-top: -21.875rem;
     max-width: 37.5rem;
-}
-
-.container-conteudo h1,
-.container-conteudo h3,
-.container-sobre h1,
-.container-habilidades h1 {
-    margin: 0;
 }
 
 .container-conteudo h1 {
@@ -138,40 +147,14 @@ body {
     font-size: 1.6rem;
 }
 
-.container-conteudo h3.texto-branco {
-    color: var(--cor-texto-claro);
-}
-
-.container-conteudo h3.texto-destacado {
-    color: var(--cor-principal);
-    font-weight: bold;
-}
-
 .texto-destacado {
     color: var(--cor-principal);
     font-weight: bold;
 }
 
-/*
-   6. SEÇÃO SOBRE MIM
- */
-.secao-sobre {
-    display: flex;
-    flex-direction: column;
-    align-items: center;    
-    color: var(--cor-texto-claro);
-    gap: 0.9375rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    width: 100%;
-}
-
-.container-sobre h1 {
-    font-size: 3.5rem;
-    color: var(--cor-principal);
-    text-align: center;
-}
-
+/* ==========================================
+   4. SEÇÃO SOBRE MIM
+   ========================================== */
 .container-sobre p {
     font-size: 1.1rem;
     line-height: 1.6;
@@ -180,75 +163,35 @@ body {
 
 .container-sobre-conteudo {
     margin-top: 2.5rem;
-    border: 2px solid #007bff;
-    padding: 1.875rem 1.875rem;
+    border: 2px solid #0385b8;
+    padding: 1.875rem;
     border-radius: 0.5rem;
     width: 95%;
     margin-left: auto;
     margin-right: auto;
 }
 
-/*
-   7. SEÇÃO HABILIDADES
-*/
-
-.secao-habilidades {
+/* ==========================================
+   5. SEÇÃO HABILIDADES (Linguagens e Conceitos)
+   ========================================== */
+.container-habilidades {
+    width: 100%; 
     display: flex;
     flex-direction: column;
-    align-items: center;    
-    color: var(--cor-texto-claro);
-    gap: 0.9375rem; 
-    padding-top: 5rem;    
-    padding-bottom: 5rem;
-    width: 100%;
+    align-items: center;
 }
 
-.container-habilidades h1 {
-    font-size: 3.5rem;
-    color: var(--cor-principal);
-    text-align: center;
-}
-
-.container-habilidades-linguagens, .container-habilidades-conceitos {
+.container-habilidades-linguagens, 
+.container-habilidades-conceitos {
     margin-top: 2.5rem;
-    border: 2px solid #ffffff;
     border-radius: 0.5rem;
     width: 83%;
     overflow: hidden;
+    border: 2px solid #0385b8;
 }
 
-.celulas {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-}
-
-.celula {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.625rem;
-
-    width: 13.75rem;
-    padding: 0.625rem 0.3125rem;
-    border: 1.5px solid #d3d3d3;
-    border-radius: 0.3125rem;
-    margin: 0.5938rem;
-}
-
-.celula img {
-    max-width: 20%;
-    height: auto;
-    border-radius: 0.1875rem;
-}
-
-.celula span {
-    font-size: 0.9375rem;
-}
-
-
-.navbar-habilidades-linguagens, .navbar-habilidades-conceitos {
+.navbar-habilidades-linguagens, 
+.navbar-habilidades-conceitos {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -259,34 +202,46 @@ body {
     padding: 0.75rem 1.25rem;
 }
 
-.celula-estruturas {
+.celulas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    flex-wrap: wrap; 
+}
+
+.celula, .celula-estruturas {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.625rem;
     min-width: 13.75rem;
+    padding: 0.625rem 0.3125rem;
+    border: 1.5px solid #d3d3d3;
+    border-radius: 0.3125rem;
+    margin: 0.5938rem;
+}
+
+.celula img {
+    width: 35px; 
+    height: auto;
+    border-radius: 0.1875rem;
+}
+
+.celula span {
+    font-size: 0.9375rem;
+}
+
+.celula-estruturas {
     width: max-content; 
     padding: 0.625rem 1rem; 
-    border: 1.5px solid #d3d3d3; 
-    border-radius: 0.3125rem; 
-    margin: 0.5938rem; 
     white-space: nowrap;
 }
 
-.container-habilidades {
-    width: 100%; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/*
-   7. SEÇÃO CONTATO
-*/
-
+/* ==========================================
+   6. SEÇÃO CONTATO
+   ========================================== */
 .container-contato h1 {
-    font-size: 3.5rem;
-    color: var(--cor-principal);
     display: inline-block;
 }
 
@@ -298,19 +253,6 @@ body {
     text-align: center;
 }
 
-
-
-.secao-contato {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;    
-    color: var(--cor-texto-claro);
-    gap: 0.9375rem; 
-    padding-top: 5rem;    
-    padding-bottom: 5rem;
-    width: 100%;
-}
-
 .container-contato-conteudo {
     margin-top: 1.5rem;
     width: 100%;
@@ -319,23 +261,12 @@ body {
 }
 
 .container-contato-conteudo .celulas {
-    display: flex;
-    justify-content: center;
     padding: 0;
 }
 
 .container-contato-conteudo .celula {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.625rem; 
     flex-direction: column;
-
-    width: 13.75rem; 
-    padding: 0.625rem 0.3125rem; 
-    border: 1.5px solid #d3d3d3;
-    border-radius: 0.3125rem; 
-    margin: 0.5938rem;
+    border: 2px solid #0385b8;
 }
 
 .container-contato-conteudo .celula a {
@@ -347,7 +278,7 @@ body {
 }
 
 .container-contato-conteudo .celula a img {
-    max-width: 40%;
+    width: 90px; 
     height: auto;
     border-radius: 0.1875rem;
     transition: transform 0.2s ease;
@@ -355,4 +286,84 @@ body {
 
 .container-contato-conteudo .celula a:hover img {
     transform: scale(1.05);
+}
+
+/* ==========================================
+   7. SEÇÃO PROJETOS (CORRIGIDA)
+   ========================================== */
+.container-projetos {
+    width: 100%;
+}
+
+.projetos-flex {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: nowrap;           
+    gap: 2rem;                   
+    margin-top: 2.5rem;
+    width: 100%;
+    overflow-x: auto;            
+    padding: 1.5rem 0.5rem;      
+}
+
+.projeto-card {
+    background-color: #1a242d;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.8rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    
+    flex: 0 0 320px;             
+    width: 320px;                
+    padding-bottom: 0; 
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 171, 240, 0.25);
+    border-color: var(--cor-principal);
+}
+
+.projeto-link-img {
+    display: block;              
+    width: 100%;
+    overflow: hidden;
+}
+
+.projeto-img {
+    display: block;              
+    width: 100%;                 
+    height: 200px;
+    object-fit: cover;           
+    transition: transform 0.3s ease;
+}
+
+.projeto-card:hover .projeto-img {
+    transform: scale(1.05);
+}
+
+.projeto-info {
+    padding: 1.8rem; 
+    box-sizing: border-box;       
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-info h2 {
+    font-size: 1.5rem;
+    color: var(--cor-principal);
+    margin-top: 0;
+    margin-bottom: 1.2rem; 
+    text-align: left;
+}
+
+.projeto-info p {
+    font-size: 0.95rem;
+    line-height: 1.6; 
+    color: #d3d3d3;
+    text-align: left;
+    margin: 0;
+    
+    word-wrap: break-word;        
+    overflow-wrap: break-word;
 }

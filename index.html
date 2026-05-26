@@ -1,21 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Portólio</title>
+    <title>Portfólio</title>
   </head>
   <body>
     <nav class="navbar">
       <div class="nav-logo">
-        <a href="#">Caio Matheus</a>
+        <a href="#">Portfolio.</a>
       </div>
 
       <ul class="nav-links">
         <li><a href="#inicio">Início</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#projetos">Projetos</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
@@ -37,7 +38,7 @@
         </div>
       </section>
 
-      <section id="sobre" class="secao-sobre">
+      <section id="sobre" class="secao-sobre secao-padrao">
         <div class="container-sobre">
           <h1>Sobre mim</h1>
           <div class="container-sobre-conteudo">
@@ -45,7 +46,7 @@
               Meu contato com o mundo da tecnologia desencadeou um grande desejo
               e interesse pela área, a fim de expandir meu repertório para criar
               experiências incríveis com diversas tecnologias. Sempre fui
-              fascinado por tecnologia e, desde o primeiro contato, tenho
+              fascinado por tecnologia e, desde o original contato, tenho
               investido em meu desenvolvimento para atuar na área de back-end,
               na qual possuo maior familiaridade.
             </p>
@@ -59,7 +60,7 @@
         </div>
       </section>
 
-      <section id="habilidades" class="secao-habilidades">
+      <section id="habilidades" class="secao-habilidades secao-padrao">
         <div class="container-habilidades">
           <h1>Habilidades</h1>
           <div class="container-habilidades">
@@ -108,13 +109,50 @@
                 <div class="celula-estruturas">
                   <span>Estruturas de Dados e Algoritmos</span>
                 </div>
+                <div class="celula-estruturas">
+                  <span>React Native</span>
+                </div>
+                <div class="celula-estruturas">
+                  <span>MVC</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contato" class="secao-contato">
+      <section id="projetos" class="secao-projetos secao-padrao">
+          <div class="container-projetos">
+            <h1>Projetos</h1>
+
+            <div class="projetos-flex">
+              <article class="projeto-card">
+                <a href="https://github.com/HandreyGama/boraler" target="_blank" class="projeto-link-img">
+                  <img src="img/projeto_1.png" alt="Capa do Projeto 1" class="projeto-img">
+                </a>
+
+                <div class="projeto-info">
+                  <h2>Boraler</h2>
+                  <p>Aplicação WEB de Biblioteca Virtual com autenticação local, busca de livros via Open Library e uma experiência de leitura com progresso, anotações, destaques e organização de biblioteca pessoal.</p>
+                </div>
+              </article>
+
+              <article class="projeto-card">
+                <a href="https://github.com/HandreyGama/boraler" target="_blank" class="projeto-link-img">
+                  <img src="img/projeto_2.png" alt="Capa do Projeto 2" class="projeto-img">
+                </a>
+
+                <div class="projeto-info">
+                  <h2>Pixelnet</h2>
+                  <p>PixelNet é uma rede social simulada no estilo anos 2000, construída com HTML, CSS e JavaScript puro. O projeto consome a JSONPlaceholder API para exibir usuários, posts, amigos, timeline e fotos de perfil de forma dinâmica. Todos os dados são simulados, já que é uma API fake.</p>
+                </div>
+              </article>
+            </div>
+
+          </div>
+      </section>
+
+      <section id="contato" class="secao-contato secao-padrao">
         <div class="container-contato">
           <h1>Contato</h1>
           <div class="container-contato-conteudo">
@@ -128,10 +166,16 @@
                   <a href="mailto: caio.matheus4496@gmail.com"><img src="img/gmail.png" alt="email-logo" /></a>
                   <span>E-mail</span>
                 </div>
+
+                <div class="celula">
+                  <a href="https://www.instagram.com/matherrx_?igsh=Z3VoZHV4anR4dWVu"><img src="img/instagram.png" alt="instagram-logo" /></a>
+                  <span>Instagram</span>
+                </div>
             </div>
           </div>
         </div>
       </section>
+
     </main>
   </body>
 </html>
